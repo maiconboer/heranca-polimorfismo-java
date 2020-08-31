@@ -19,33 +19,29 @@ public class Main {
 		System.out.print("Enter the number of shapes: ");
 		int quantityShapes = sc.nextInt();
 		
-		
 		for (int i=1; i<=quantityShapes; i++) {
 			System.out.println("Shape #" + i + " data:");
 			System.out.print("Rectangle or Circle (r/c)? ");
 			char ch = sc.next().charAt(0);
 			sc.nextLine();
 			
-			if(ch == 'r') {
-				System.out.print("Color (BLACK/BLUE/RED): ");
-				String color = sc.nextLine();
-				
+			System.out.print("Color (BLACK/BLUE/RED): ");
+			Color color = Color.valueOf(sc.next());
+			
+			if(ch == 'r') {		
 				System.out.print("Widht: ");
 				double width = sc.nextDouble();
 				
 				System.out.print("Height: ");
 				double height = sc.nextDouble();
 			
-				list.add(new Rectangle(Color.valueOf(color), width, height));
+				list.add(new Rectangle(color, width, height));
 			}
-			else {
-				System.out.print("Color (BLACK/BLUE/RED): ");
-				String color = sc.nextLine();
-				
+			else {				
 				System.out.print("Radius: ");
 				double radius = sc.nextDouble();
 					
-				list.add(new Circle(Color.valueOf(color), radius));
+				list.add(new Circle(color, radius));
 			}
 		}
 		
@@ -58,5 +54,4 @@ public class Main {
 		
 		sc.close();
 	}
-
 }
