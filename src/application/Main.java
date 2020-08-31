@@ -55,6 +55,8 @@ public class Main {
 		for(Shape item : list) {
 			System.out.println(String.format("%.2f", item.area()));
 		}
+		
+		sc.close();
 	}
 
 }
